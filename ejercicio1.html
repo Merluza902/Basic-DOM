@@ -53,18 +53,20 @@
     </div>
     <script>
     // Escríbe aquí tu código
+
     let form = document.getElementById("form");
-    form.addEventListener("submit", function(event){
+    form.addEventListener("submit", function (event) {
         event.preventDefault();
         limpiarErrores();
-        let textNombre = document.querySelector(".textNombre").value;
-        let textTelefono = document.querySelector(".textTelefono").value;
-        let textEmail = document.querySelector(".textEmail").value;
-        let resultado = validar(textNombre,textTelefono,textEmail);
-        if (resultado == true){
-        exito();
-    };
-});
+        let nombre = document.getElementById("nombre").value;
+        let asunto = document.getElementById("asunto").value;
+        let mensaje = document.getElementById("mensaje").value;
+        let resultado = validar(nombre, asunto, mensaje);
+        if (resultado == true) {
+            exito();
+        }
+    });
+
 //PRIMERA FUNCIÓN
 function limpiarErrores(){
     //Limpiar mensajes de error
@@ -97,51 +99,11 @@ function validar(nombre, asunto, mensaje) {
     if (mensaje == "" || expresion.test(mensaje) == false) {
         // Validar mensaje
         document.querySelector("errorMensaje").innerHTML = "Mensaje es requerido!"
+        pasamosLaValidación = false
     }
     return pasamosLaValidación;
 }
 
-//EJEMPLO:
-/* function limpiar() {
-        // Limpiar mensajes de error
-        document.querySelector(".errorNombre").innerHTML = "";
-        document.querySelector(".errorAsunto").innerHTML = "";
-        document.querySelector(".errorMensaje").innerHTML = "";
-    } */
-
-/*     function exito() {
-        // Mostrar mensaje de éxito
-        document.querySelector(".resultado").innerHTML = "Mensaje enviado con éxito !!!";
-
-    }
- */
-
-    /* function validar(nombre, asunto, mensaje) {
-        let pasamosLaValidación = true;
-        let expresion = /[a-zA-Z]\w+/;
-        if (nombre == "" || expresion.test(nombre) == false) {
-          // Validar nombre
-        }
-        if (asunto == "" || expresion.test(asunto) == false) {
-          // Validar asunto
-        }
-        if (mensaje == "" || expresion.test(mensaje) == false) {
-          // Validar mensaje
-        }
-        return pasamosLaValidación;
-    } */
-    let form = document.getElementById("formulario");
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        limpiar();
-        let nombre = document.getElementById("nombre").value;
-        let asunto = document.getElementById("asunto").value;
-        let mensaje = document.getElementById("mensaje").value;
-        let resultado = validar(nombre, asunto, mensaje);
-        if (resultado == true) {
-            exito();
-        }
-    });
     </script>
 </body>
 
