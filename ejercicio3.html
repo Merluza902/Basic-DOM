@@ -45,39 +45,34 @@
     function mostrarResultado(resultado) {
         // Si el resultado es menor que 0, establecer resultado como 0
         if (resultado < 0) {
-
             resultado = 0;
         }
         // Mostrar el resultado en el elemento con clase "resultado"
         document.querySelector(".resultado").innerHTML = resultado;
     }
     // Agregar un event listener al botón con el id "btn-sumar"
-    document
-    .getElementById("btn-sumar")
-    .addEventListener("...", function () {
+    document.getElementById("btn-sumar").addEventListener("click", function () {
         // Llamar a la función limpiar para limpiar el contenido previo
         limpiar();
         // Obtener los valores de los campos de entrada valor1 y valor2
-        let valor1 = document...("valor1")....;
-        let valor2 = document...("valor2")....;
+        let valor1 = document.getElementById("valor1").value;
+        let valor2 = document.getElementById("valor2").value;
         // Calcular la suma de los valores obtenidos como números
         let valor3 = Number(valor1) + Number(valor2);
         // Mostrar el resultado de la suma llamando a la función mostrarResultado
         mostrarResultado(valor3);
     });
     // Agregar un event listener al botón con el id "btn-restar"
-    document
-    ...("btn-restar")
-    .addEventListener("...", function () {
+    document.getElementById("btn-restar").addEventListener("click", function () {
         // Llamar a la función limpiar para limpiar el contenido previo
         limpiar();
         // Obtener los valores de los campos de entrada valor1 y valor2
-        let valor1 = document.getElementById("valor1")....;
-        let valor2 = document.getElementById("valor2")....;
+        let valor1 = document.getElementById("valor1").value;
+        let valor2 = document.getElementById("valor2").value;
         // Calcular la resta de los valores obtenidos como números
         let valor3 = Number(valor1) - Number(valor2);
         // Mostrar el resultado de la resta llamando a la función mostrarResultado
-        ...(valor3);
+        mostrarResultado(valor3);
     });
     </script>
 </body>
