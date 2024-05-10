@@ -93,12 +93,12 @@ function validar(nombre, asunto, mensaje) {
     }
     if (asunto == "" || expresion.test(asunto) == false) {
         // Validar asunto
-        document.querySelector("errorAsunto").innerHTML = "Asunto es requerido"
+        document.querySelector(".errorAsunto").innerHTML = "Asunto es requerido"
         pasamosLaValidación = false;
     }
     if (mensaje == "" || expresion.test(mensaje) == false) {
         // Validar mensaje
-        document.querySelector("errorMensaje").innerHTML = "Mensaje es requerido!"
+        document.querySelector(".errorMensaje").innerHTML = "Mensaje es requerido!"
         pasamosLaValidación = false
     }
     return pasamosLaValidación;
