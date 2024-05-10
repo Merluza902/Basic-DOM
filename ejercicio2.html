@@ -36,6 +36,32 @@
 </div>
     <script>
     // Escríbe aquí tu código
+    var caja = document.getElementById("caja");
+
+    caja.addEventListener("click",validar);
+    function remplazarColorCaja(color) {
+        // Cambiar el color de fondo de la caja
+        caja.style.backgroundColor = color;
+    }
+    // Event listeners para cambiar el color de la caja
+    document.getElementById("btn-1").addEventListener("click", function () {
+        reemplazarColorCaja("#e53e3e");
+    });
+    document.getElementById("btn-2").addEventListener("click", function () {
+        reemplazarColorCaja("#dd6b20");
+    });
+    document.getElementById("btn-3").addEventListener("click", function () {
+        reemplazarColorCaja("#faf089");
+    });
+    document.getElementById("btn-4").addEventListener("click", function () {
+        reemplazarColorCaja("#48bb78");
+    });
+    document.getElementById("btn-5").addEventListener("click", function () {
+        reemplazarColorCaja("#81e6d9");
+    });
+    document.getElementById("btn-6").addEventListener("click", function () {
+        reemplazarColorCaja("#d53f8c");
+    });
     </script>
 </body>
 
