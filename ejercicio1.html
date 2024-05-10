@@ -80,28 +80,26 @@ function exito() {
     document.querySelector(".resultado").innerHTML = "Mensaje enviado con éxito !!!";
 }
 
-
-
-function validar(nombre,telefono,email){
-    let pasamosLaValidacion = true;
-    let validacionNombre = /[a-zA-Z]/gim;
-    if (validacionNombre.test(nombre) == false) {
-        document.querySelector(".errorNombre").innerHTML = "ingrese un nombre válido"
-        pasamosLaValidacion = false;
+//FUNCIÓN 3: VALIDAR
+function validar(nombre, asunto, mensaje) {
+    let pasamosLaValidación = true;
+    let expresion = /[a-zA-Z]\w+/;
+    if (nombre == "" || expresion.test(nombre) == false) {
+        // Validar nombre
+        document.querySelector(".errorNombre").innerHTML = "El nombre es requerido!!";
+        pasamosLaValidación = false;
     }
-    //telefono
-    let validacionTelefono = /\d/gim;
-    if (validacionTelefono.test(telefono) == false){
-        document.querySelector(".errorTelefono").innerHTML = "Ingrese un teléfono valido"
-        pasamosLaValidacion = false;
-    };
-    let validacionEmail = /[A-Z0-9._%+-]+@[A-Z0-9-]+.[A-Z]/gim;
-    if (validacionEmail.test(email) == false) {
-        document.querySelector(".errorEmail").innerHTML = "Ingrese un correo válido."
-        pasamosLaValidacion = false;
-    };
-    return pasamosLaValidacion;
-};
+    if (asunto == "" || expresion.test(asunto) == false) {
+        // Validar asunto
+        document.querySelector("errorAsunto").innerHTML = "Asunto es requerido"
+        pasamosLaValidación = false;
+    }
+    if (mensaje == "" || expresion.test(mensaje) == false) {
+        // Validar mensaje
+        document.querySelector("errorMensaje").innerHTML = "Mensaje es requerido!"
+    }
+    return pasamosLaValidación;
+}
 
 //EJEMPLO:
 /* function limpiar() {
@@ -118,7 +116,7 @@ function validar(nombre,telefono,email){
     }
  */
 
-    function validar(nombre, asunto, mensaje) {
+    /* function validar(nombre, asunto, mensaje) {
         let pasamosLaValidación = true;
         let expresion = /[a-zA-Z]\w+/;
         if (nombre == "" || expresion.test(nombre) == false) {
@@ -131,7 +129,7 @@ function validar(nombre,telefono,email){
           // Validar mensaje
         }
         return pasamosLaValidación;
-    }
+    } */
     let form = document.getElementById("formulario");
     form.addEventListener("submit", function (event) {
         event.preventDefault();
